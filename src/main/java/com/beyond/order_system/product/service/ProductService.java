@@ -115,7 +115,6 @@ public class ProductService {
                 String filename = imgUrl.substring(imgUrl.lastIndexOf("/")+1);
                 s3Client.deleteObject(a->a.bucket(bucket).key(filename));
             }
-
 //            신규 이미지를 등록
             String newFilename = "product-" + product.getId() + "-productImage-" + dto.getProductImage().getOriginalFilename();
             PutObjectRequest request = PutObjectRequest.builder()
